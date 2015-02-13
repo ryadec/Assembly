@@ -140,17 +140,11 @@ yellowline proc
 		
 		loop L4
 		   
-		   
-           
-		   
-		   mov eax, (white+16*black)    ; set the text color back to white
+		   	   
+	   mov eax, (white+16*black)    ; set the text color back to white
            call settextcolor
 ret
 yellowline endp
-
-
-
-
 
 	main ENDP
 			; (insert additional procedures here)

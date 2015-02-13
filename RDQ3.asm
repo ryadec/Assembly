@@ -168,15 +168,7 @@ main PROC	; (insert executable instructions here)
 	call writestring
 	add esi, 4
    loop L6
-   
-   
-   
-   
-
-
-
-       
- 
+  
 exit
 	main ENDP
 			; (insert additional procedures here)

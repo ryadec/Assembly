@@ -17,7 +17,7 @@ INCLUDE Irvine32.inc
  ;  PLOT OF WHAT WE ARE GOING TO PRINT         
  ;------------------------------
  ;  
- ;---O-OO----OOO--       *
+ ;---O-OO----OOO--      *
  ;---OO--O--O---O-      *
  ;---O------O---O-      *
  ;---O------O---O-      *
@@ -31,7 +31,7 @@ INCLUDE Irvine32.inc
  lenarray4 = lengthof array4
  lenarray5 = lengthof array5
  grandarray dword 10 dup(?)    ;2x number of arrays 
- ; grandarray contains the the three offsets and the 3 lengths of the arrays
+                               ; grandarray contains the the three offsets and the 3 lengths of the arrays
  x byte 0
  y byte 0
  
@@ -84,18 +84,8 @@ main proc
 	 pop ecx
 	loop L2
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	   
-  	mov eax, (white+16*black)    ; set the text color back to white
+		   
+    mov eax, (white+16*black)    ; set the text color back to white
     call settextcolor
    
   
@@ -160,7 +150,7 @@ picture proc
  mov esi, offset grandarray
  sub esi,4   ; we start a dword back
  mov ecx, 5
- ;-------------------------------------------OUTER LOOP
+ ;-------------------------------------------------------OUTER LOOP
 		outer:
 		push ecx
    ; get each array from grandarry data
@@ -170,7 +160,7 @@ picture proc
 		mov ecx, [esi]
 		mov l,ecx
 		mov ecx, l
-		;-------------------------------------INNER LOOP
+		;----------------------------------------INNER LOOP
 				inner:
 					push ecx     ;use data from eachg line to det up  
 					mov ecx,0
@@ -191,7 +181,7 @@ picture proc
 		  ;call dumpregs
 		; call waitmsg
 		loop outer
-		;--------------------------------------------END OUTER LOOP
+;----------------------------------------------------END OUTER LOOP
 		ret
 picture endp
  END main

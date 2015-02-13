@@ -8,6 +8,8 @@ INCLUDE Irvine32.inc
  array3 byte 3,' ',1,'O',6,' ',1,'O',3,' ',1,'O'
  array4 byte 3,' ',1,'O',6,' ',1,'O',3,' ',1,'O'
  array5 byte 3,' ',1,'O',7,' ',3,'O'
+
+ ;THIS IS THE SCHEMATIC OF THE PRINT
  ;------------------------------
  ;---OOOOO  
  ;---O-----O-OO
@@ -22,6 +24,9 @@ INCLUDE Irvine32.inc
  ;---O------O---O      *
  ;---O------O---O      *
  ;---0-------OOO       *
+
+
+
  
  delta dword ?
  l dword ?
@@ -108,7 +113,7 @@ picture proc
  mov esi,offset grandarray
  sub esi,4   ; we start a dword back
  mov ecx, 5
- ;-------------------------------------------OUTER LOOP
+ ;---------------------------------------------------------------OUTER LOOP
 		outer:
 		push ecx
    ; get each array from grandarry data
@@ -118,7 +123,7 @@ picture proc
 		mov ecx, [esi]
 		mov l,ecx
 		mov ecx, l
-		;-------------------------------------INNER LOOP
+		;------------------------------------------------INNER LOOP
 				inner:
 					push ecx     ;use data from eachg line to det up  
 					mov ecx,0
@@ -131,7 +136,7 @@ picture proc
       
 					pop ecx
 				loop inner
-		;------------------------------------END INNER LOOP	
+		;--------------------------------------------END INNER LOOP	
 		inc dh 
 		mov dl,5
 		pop ecx
@@ -139,7 +144,7 @@ picture proc
 		  ;call dumpregs
 		; call waitmsg
 		loop outer
-		;--------------------------------------------END OUTER LOOP
+;------------------------------------------------------------END OUTER LOOP
 		ret
 picture endp
  END main
