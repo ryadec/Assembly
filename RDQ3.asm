@@ -1,4 +1,3 @@
-TITLE Mideterm Question 3 part A
 
 Comment @
 Program Description :?
